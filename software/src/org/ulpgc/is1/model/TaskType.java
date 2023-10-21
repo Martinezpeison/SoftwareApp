@@ -1,4 +1,5 @@
 package org.ulpgc.is1.model;
 
-public class TaskType {
+public enum TaskType {
+    Analysis, Design, Test, programming
 }

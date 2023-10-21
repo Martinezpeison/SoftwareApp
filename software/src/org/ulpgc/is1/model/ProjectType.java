@@ -1,4 +1,5 @@
 package org.ulpgc.is1.model;
 
-public class ProjectType {
+public enum ProjectType {
+    webDevelopment, mobileAppDevelopment, cloudComputing
 }
