@@ -8,10 +8,10 @@ public class Project {
     private int projectId;
     private String projectName;
     private String projectDescription;
-    private List<Task> task;
-
-    public Project(int projectId, String projectName, String projectDescription,
-                   String taskName, String taskDescription, LocalDate taskStart, LocalDate taskEnd, int effort){
+    private ProjectType projectType;
+    private Manager manager;
+    private List<Developer> developers;
+    public Project(int projectId, String projectName, String projectDescription, ProjectType projectType, Manager manager){
         this.projectId = NEXT_ID++;
         this.projectName = projectName;
         this.projectDescription = projectDescription;
@@ -44,10 +44,12 @@ public class Project {
     public void setProjectDescription(String projectDescription) {
         this.projectDescription = projectDescription;
     }
-    public List<Task> getTask() {
-        return task;
+
+    public void setManager(Manager manager) {
+        this.manager = manager;
     }
-    public void addTask(Task newTask) {
-        task.add(newTask);
+
+    public void addDeveloper(Developer developer) {
+        developers.add(developer);
     }
 }

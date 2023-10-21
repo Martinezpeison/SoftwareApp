@@ -9,8 +9,9 @@ public class Task extends Effort{
     private Date taskStart;
     private Date taskEnd;
     private Effort effort;
+    private TaskType taskType;
 
-    public Task(String taskName, String taskDescription, Date taskStart, Date taskEnd, int amount) {
+    public Task(String taskName, String taskDescription, TaskType taskType,Date taskStart, Date taskEnd, int amount) {
         super(amount);
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -49,8 +50,10 @@ public class Task extends Effort{
     public void setTaskEnd(Date taskEnd) {
         this.taskEnd = taskEnd;
     }
-    public void addEffort(int additionalEffort) {
-        int actualEffort = getAmount();
-        setAmount(actualEffort + additionalEffort);
+    public void addEffort(Effort newEffort) {
+        ///quiero que si el parametro es menor o igual a 10 o mayor o igual a 0 se añada a la lista
+        if(newEffort.getAmount()<=10 && newEffort.getAmount()>=0){
+            setAmount(newEffort.getAmount());
+        }
     }
 }

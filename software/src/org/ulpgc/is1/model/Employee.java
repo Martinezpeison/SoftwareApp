@@ -1,17 +1,20 @@
 package org.ulpgc.is1.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Employee {
     private String employeeName;
     private String employeeEmail;
     private List<Task> task;
+    private List<Project> projects;
 
     public Employee(String employeeName, String employeeEmail,
-                    String taskName, String taskDescription, LocalDate taskStart, LocalDate taskEnd, int effort) {
+                    String taskName, String taskDescription, TaskType taskType, LocalDate taskStart, LocalDate taskEnd, int effort) {
         this.employeeName = employeeName;
         this.employeeEmail = employeeEmail;
+        this.projects = new ArrayList<>();
     }
 
     public String getEmployeeName() {
@@ -34,5 +37,8 @@ public class Employee {
     }
     public void addTask(Task newTask) {
         task.add(newTask);
+    }
+    public void addProject(Project newProject) {
+        projects.add(newProject);
     }
 }
