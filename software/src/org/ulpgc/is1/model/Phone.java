@@ -8,7 +8,6 @@ public class Phone {
     }
 
     public String getPhoneNumber() {
-        ///Si el numero de telefono no tiene 9 digitos o los digitos no son numeros, devuelve XXXX
         if (phoneNumber.length() != 9 || !phoneNumber.matches("[0-9]+")) {
             return "XXXX";
         } else {
