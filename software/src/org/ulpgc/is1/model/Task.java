@@ -52,7 +52,6 @@ public class Task extends Effort{
         this.taskEnd = taskEnd;
     }
     public void addEffort(Effort newEffort) {
-        ///quiero que si el parametro es menor o igual a 10 o mayor o igual a 0 se añada a la lista
         if(newEffort.getAmount()<=10 && newEffort.getAmount()>=0){
             setAmount(newEffort.getAmount());
         }else {
@@ -60,6 +59,9 @@ public class Task extends Effort{
         }
     }
     public String toString() {
-        return  "Task: " + taskName + '\n' + "Description: " + taskDescription + '\n' + "Start: " + taskStart + '\n' + "End: " + taskEnd + '\n';
+        return  "Task: " + taskName + '\n' 
+            + "Description: " + taskDescription + '\n' 
+            + "Start: " + taskStart + '\n' 
+            + "End: " + taskEnd + '\n';
     }
 }
