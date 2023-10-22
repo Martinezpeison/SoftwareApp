@@ -1,6 +1,7 @@
 package org.ulpgc.is1.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Project extends Contract{
@@ -9,6 +10,15 @@ public class Project extends Contract{
     private String projectName;
     private String projectDescription;
     private List<Task> tasks;
+
+    public List<Task> getTasks() {
+        return tasks;
+    }
+
+    public void setTasks(List<Task> tasks) {
+        this.tasks = tasks;
+    }
+
     private Contract contract;
     private Employee manager;
     private Employee developers;
@@ -24,6 +34,7 @@ public class Project extends Contract{
         this.customer = customer;
         this.manager = manager;
         this.developers = developers;
+        this.tasks = new ArrayList<>();
     }
 
     public int getNEXT_ID() {
@@ -55,6 +66,9 @@ public class Project extends Contract{
     }
 
     ///añadir funcion addTask() para añadir tareas a la lista de tareas del proyecto
+    public void addTask(Task newTask) {
+        tasks.add(newTask);
+    }
     public String toString() {
         return  "Project: " + projectName + '\n'
                 + "Description: " + projectDescription + '\n'

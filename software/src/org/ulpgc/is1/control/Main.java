@@ -22,11 +22,16 @@ public class Main {
                 LocalDate.of(2020, 12, 12),
                 LocalDate.of(2020, 12, 12),
                 123));
-                /*projectManager.projects.get(0).addTask(new Task("Task1", "Task description",
+                projectManager.projects.get(0).addTask(new Task("Task1", "Task description",
                 TaskType.Analysis,
                 LocalDate.of(2020, 12, 12),
                 LocalDate.of(2020, 12, 12),
-                6));*/
+                6));
+                projectManager.projects.get(0).addTask(new Task("Task2", "Task2 description2",
+                TaskType.Test,
+                LocalDate.of(2020, 11, 15),
+                LocalDate.of(2020, 12, 15),
+                8));
 
         ///Imprimir por pantalla los datos del primer customer
         System.out.println("Datos del primer cliente: " + "\n" + projectManager.getCustomers().get(0).toString());
@@ -35,7 +40,7 @@ public class Main {
         ///Imprimir por pantalla los datos del proyecto del primer cliente
         System.out.println("Datos del proyecto del primer cliente: " + "\n" + projectManager.projects.get(0).toString());
         ///Imprimir por pantalla los datos de las tareas del proyecto
-        /*System.out.println("Datos de las tareas del proyecto: " + "\n" + projectManager.projects.get(0).getTasks().get(0).toString());*/
+        System.out.println("Datos de las tareas del proyecto: " + "\n" + projectManager.projects.get(0).getTasks().get(0).toString());
         ///Borrar el segundo cliente.
         projectManager.getCustomers().remove(1);
         ///Imprimir por pantalla el número de clientes.

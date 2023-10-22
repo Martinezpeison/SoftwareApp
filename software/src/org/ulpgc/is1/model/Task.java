@@ -59,4 +59,7 @@ public class Task extends Effort{
             System.out.println("El esfuerzo debe estar entre 0 y 10");
         }
     }
+    public String toString() {
+        return  "Task: " + taskName + '\n' + "Description: " + taskDescription + '\n' + "Start: " + taskStart + '\n' + "End: " + taskEnd + '\n';
+    }
 }
