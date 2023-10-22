@@ -65,7 +65,6 @@ public class Project extends Contract{
         this.projectDescription = projectDescription;
     }
 
-    ///añadir funcion addTask() para añadir tareas a la lista de tareas del proyecto
     public void addTask(Task newTask) {
         tasks.add(newTask);
     }
