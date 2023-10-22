@@ -3,18 +3,27 @@ package org.ulpgc.is1.model;
 import java.time.LocalDate;
 import java.util.List;
 
-public class Project {
+public class Project extends Contract{
     private int NEXT_ID = 0;
     private int projectId;
     private String projectName;
     private String projectDescription;
+    private List<Task> tasks;
+    private Contract contract;
+    private Employee manager;
+    private Employee developers;
     private ProjectType projectType;
-    private Manager manager;
-    private List<Developer> developers;
-    public Project(int projectId, String projectName, String projectDescription, ProjectType projectType, Manager manager){
+    private Customer customer;
+
+    public Project(String projectName, String projectDescription, ProjectType projectType, Customer customer, Employee manager, Employee developers, LocalDate startContract, LocalDate endContract, int budget) {
+        super(startContract, endContract, budget);
         this.projectId = NEXT_ID++;
         this.projectName = projectName;
         this.projectDescription = projectDescription;
+        this.projectType = projectType;
+        this.customer = customer;
+        this.manager = manager;
+        this.developers = developers;
     }
 
     public int getNEXT_ID() {
@@ -45,11 +54,16 @@ public class Project {
         this.projectDescription = projectDescription;
     }
 
-    public void setManager(Manager manager) {
-        this.manager = manager;
-    }
-
-    public void addDeveloper(Developer developer) {
-        developers.add(developer);
+    ///añadir funcion addTask() para añadir tareas a la lista de tareas del proyecto
+    public String toString() {
+        return  "Project: " + projectName + '\n'
+                + "Description: " + projectDescription + '\n'
+                + "Project Type: " + projectType + '\n'
+                + "Customer " + customer + '\n'
+                + "Manager: " + manager + '\n'
+                + "Developers: " + developers + '\n'
+                + "Start Contract: " + getStartContract() + '\n'
+                + "End Contract: " + getEndContract()+ '\n'
+                + "Budget: " + getBudget() + '\n';
     }
 }

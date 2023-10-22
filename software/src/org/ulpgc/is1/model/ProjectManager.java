@@ -1,13 +1,13 @@
 package org.ulpgc.is1.model;
-import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class ProjectManager {
-    private List<Customer> customers;
-    private List<Project> projects;
-    private List<Employee> employees;
+    private List<Customer> customers = new ArrayList<>();
+    public List<Project> projects = new ArrayList<>();
+    private List<Employee> employees = new ArrayList<>();
 
-    public ProjectManager(List<Customer> customers, List<Project> projects, List<Employee> employees) {
+    public ProjectManager() {
         this.customers = customers;
         this.projects = projects;
         this.employees = employees;
@@ -27,7 +27,5 @@ public class ProjectManager {
     public List<Employee> getEmployees() {
         return employees;
     }
-    public void project(List<Project> projects) {
-        this.projects = projects;
-    }
+    public void project(Project newProject){projects.add(newProject);}
 }

@@ -1,17 +1,22 @@
 package org.ulpgc.is1.model;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Developer extends Employee {
-    private Employee employee;
-    private List<Project> projects;
-    public void addProject(Project newProject) {
-        projects.add(newProject);
+    private List<Developer> developers = new ArrayList<>();
+
+    public Developer(String employeeName, String employeeEmail, List<Developer> developers) {
+        super(employeeName, employeeEmail);
+        this.developers = developers;
     }
 
-    public Developer(String employeeName, String employeeEmail, String taskName, String taskDescription, TaskType taskType, LocalDate taskStart, LocalDate taskEnd, int effort, Employee employee) {
-        super(employeeName, employeeEmail, taskName, taskDescription, taskType, taskStart, taskEnd, effort);
-        this.employee = employee;
+    public List<Developer> getDevelopers() {
+        return developers;
+    }
+
+    public void setDevelopers(List<Developer> developers) {
+        this.developers = developers;
     }
 }

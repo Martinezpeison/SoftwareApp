@@ -1,11 +1,12 @@
 package org.ulpgc.is1.model;
 
-public class Customer {
+public class Customer extends Phone{
     private String name;
     private String surname;
     private Phone phoneNumber;
 
     public Customer(String name, String surname, String phoneNumber) {
+        super(phoneNumber);
         this.name = name;
         this.surname = surname;
     }
@@ -25,8 +26,11 @@ public class Customer {
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    public boolean isValid(int phoneNumber) {
-        String phoneNumberLength = Integer.toString(phoneNumber);
-        return phoneNumberLength.length() == 9;
+
+    public String toString() {
+        return  "Customer: " + name + " " + surname + '\n' + "Phone Number: " + getPhoneNumber() + '\n';
+    }
+    public String getToString() {
+        return  toString();
     }
 }

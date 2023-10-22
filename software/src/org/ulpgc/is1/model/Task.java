@@ -1,17 +1,18 @@
 package org.ulpgc.is1.model;
 
+import java.time.LocalDate;
 import java.util.Date;
 
 public class Task extends Effort{
 
     private String taskName;
     private String taskDescription;
-    private Date taskStart;
-    private Date taskEnd;
+    private LocalDate taskStart;
+    private LocalDate taskEnd;
     private Effort effort;
     private TaskType taskType;
 
-    public Task(String taskName, String taskDescription, TaskType taskType,Date taskStart, Date taskEnd, int amount) {
+    public Task(String taskName, String taskDescription, TaskType taskType,LocalDate taskStart, LocalDate taskEnd, int amount) {
         super(amount);
         this.taskName = taskName;
         this.taskDescription = taskDescription;
@@ -35,25 +36,27 @@ public class Task extends Effort{
         this.taskDescription = taskDescription;
     }
 
-    public Date getTaskStart() {
+    public LocalDate getTaskStart() {
         return taskStart;
     }
 
-    public void setTaskStart(Date taskStart) {
+    public void setTaskStart(LocalDate taskStart) {
         this.taskStart = taskStart;
     }
 
-    public Date getTaskEnd() {
+    public LocalDate getTaskEnd() {
         return taskEnd;
     }
 
-    public void setTaskEnd(Date taskEnd) {
+    public void setTaskEnd(LocalDate taskEnd) {
         this.taskEnd = taskEnd;
     }
     public void addEffort(Effort newEffort) {
         ///quiero que si el parametro es menor o igual a 10 o mayor o igual a 0 se añada a la lista
         if(newEffort.getAmount()<=10 && newEffort.getAmount()>=0){
             setAmount(newEffort.getAmount());
+        }else {
+            System.out.println("El esfuerzo debe estar entre 0 y 10");
         }
     }
 }
