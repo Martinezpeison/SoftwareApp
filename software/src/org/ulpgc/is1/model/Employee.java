@@ -7,9 +7,9 @@ import java.util.List;
 public class Employee{
     private String employeeName;
     private String employeeEmail;
-    private List<Task> task;
-    private List<Project> projects;
-
+    private List<Task> tasks = new ArrayList<>();
+    private List<Project> projectsAsDeveloper = new ArrayList<>();
+    private List<Project> projectsAsManager = new ArrayList<>();
     public Employee(String employeeName, String employeeEmail) {
         this.employeeName = employeeName;
         this.employeeEmail = employeeEmail;
@@ -23,23 +23,31 @@ public class Employee{
         this.employeeName = employeeName;
     }
 
-    public String getEmail() {
+    public String getEmployeeEmail() {
         return employeeEmail;
     }
 
-    public void setEmail(String employeeEmail) {
-        this.employeeEmail = Employee.this.employeeEmail;
+    public void setEmployeeEmail(String employeeEmail) {
+        this.employeeEmail = employeeEmail;
     }
     public List<Task> getTask() {
-        return task;
+        return tasks;
     }
     public void addTask(Task newTask) {
-        task.add(newTask);
+        tasks.add(newTask);
     }
-    public void addProject(Project newProject) {
-        projects.add(newProject);
+    public void addProjectAsDeveloper(Project project){
+        this.projectsAsDeveloper.add(project);
+    }
+    public void addProjectAsManager(Project project){
+        this.projectsAsManager.add(project);
     }
     public String toString() {
-        return  "Employee: " + employeeName + '\n' + "Email: " + employeeEmail + '\n';
+        return  "Employee: "
+                + employeeName
+                + '\n'
+                + "Email: "
+                + employeeEmail
+                + '\n';
     }
 }

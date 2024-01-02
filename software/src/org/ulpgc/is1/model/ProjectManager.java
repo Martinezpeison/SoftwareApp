@@ -7,12 +7,12 @@ import static org.ulpgc.is1.model.ProjectType.webDevelopment;
 
 public class ProjectManager {
     private List<Customer> customers = new ArrayList<>();
-    public List<Project> projects = new ArrayList<>();
+    public Project project;
     private List<Employee> employees = new ArrayList<>();
 
     public ProjectManager() {
         this.customers = customers;
-        this.projects = projects;
+        this.project = project;
         this.employees = employees;
     }
 
@@ -24,21 +24,27 @@ public class ProjectManager {
         employees.add(new Employee("Juan", "juan@gmail.com"));
         employees.add(new Employee("Pedro", "pedro@gmail.com"));
     }
-    public List<Customer> getCustomers() {
+    public List<Customer> getCustomer() {
         return customers;
     }
-    public List<Employee> getEmployees() {
+    public List<Employee> getEmployee() {
         return employees;
     }
+    public Customer getCustomer(int index) {
+        return customers.get(index);
+    }
+    public Employee getEmployee(int index) {
+        return employees.get(index);
+    }
     public void project(Project project){
-        projects.add(new Project("Project1",
+        Project project1 = new Project("Project1",
                 "Project description",
                 webDevelopment,
-                getCustomers().get(0),
-                getEmployees().get(1),
-                getEmployees().get(0),
+                getCustomer().get(0),
+                getEmployee().get(1),
+                getEmployee().get(0),
                 LocalDate.of(2020, 12, 12),
                 LocalDate.of(2021, 12, 12),
-                250000));
+                250000);
     }
 }

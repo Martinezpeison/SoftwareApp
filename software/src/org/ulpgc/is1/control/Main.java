@@ -25,22 +25,22 @@ public class Main {
                 8));
 
         ///Imprimir por pantalla los datos del primer cliente.
-        System.out.println("Datos del primer cliente: " + "\n" + projectManager.getCustomers().get(0).toString());
+        System.out.println("Datos del primer cliente: " + "\n" + projectManager.getCustomer().get(0).toString());
 
         ///Imprimir por pantalla los datos del segundo empleado.
-        System.out.println("Datos del segundo empleado: " + "\n"+ projectManager.getEmployees().get(1).toString());
+        System.out.println("Datos del segundo empleado: " + "\n"+ projectManager.getEmployee().get(1).toString());
 
         ///Imprimir por pantalla los datos del proyecto del primer cliente
-        System.out.println("Datos del proyecto del primer cliente: " + "\n" + projectManager.projects.get(0).toString());
+        System.out.println("Datos del proyecto del primer cliente: " + "\n" + projectManager.project.toString());
 
         ///Imprimir por pantalla los datos de las tareas del proyecto
-        System.out.println("Datos de las tareas del proyecto: " + "\n" + projectManager.projects.get(0).getTasks().get(0).toString());
+        System.out.println("Datos de las tareas del proyecto: " + "\n" + projectManager.project.getTasks().get(0).toString());
 
         ///Borrar el segundo cliente.
-        projectManager.getCustomers().remove(1);
+        projectManager.getCustomer().remove(1);
 
         ///Imprimir por pantalla el número de clientes.
-        System.out.println("Numero de clientes: " + projectManager.getCustomers().size());
+        System.out.println("Numero de clientes: " + projectManager.getCustomer().size());
         }
     }
 

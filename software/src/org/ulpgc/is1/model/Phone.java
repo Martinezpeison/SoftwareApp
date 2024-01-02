@@ -7,7 +7,7 @@ public class Phone {
         this.phoneNumber = phoneNumber;
     }
 
-    public String getPhoneNumber() {
+    public String isValid() {
         if (phoneNumber.length() != 9 || !phoneNumber.matches("[0-9]+")) {
             return "XXXX";
         } else {

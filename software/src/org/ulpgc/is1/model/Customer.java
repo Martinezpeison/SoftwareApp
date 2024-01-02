@@ -1,9 +1,13 @@
 package org.ulpgc.is1.model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Customer extends Phone{
     private String name;
     private String surname;
     private Phone phoneNumber;
+    private List<Project> projectsAsCustomer = new ArrayList<>();
 
     public Customer(String name, String surname, String phoneNumber) {
         super(phoneNumber);
@@ -27,12 +31,7 @@ public class Customer extends Phone{
         this.surname = surname;
     }
 
-    public String toString() {
-        return  "Customer: " + name + " "
-                + surname + '\n'
-                + "Phone Number: " + getPhoneNumber() + '\n';
-    }
-    public String getToString() {
-        return  toString();
+    public void addProjectAsCustomer(Project project){
+        this.projectsAsCustomer.add(project);
     }
 }
