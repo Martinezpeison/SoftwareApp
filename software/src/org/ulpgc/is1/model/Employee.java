@@ -5,30 +5,31 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Employee{
-    private String employeeName;
-    private String employeeEmail;
+    private String name;
+    private String email;
     private List<Task> tasks = new ArrayList<>();
     private List<Project> projectsAsDeveloper = new ArrayList<>();
     private List<Project> projectsAsManager = new ArrayList<>();
-    public Employee(String employeeName, String employeeEmail) {
-        this.employeeName = employeeName;
-        this.employeeEmail = employeeEmail;
+    private List<Effort> efforts = new ArrayList<>();
+    public Employee(String name, String email) {
+        this.name = name;
+        this.email = email;
     }
 
-    public String getEmployeeName() {
-        return employeeName;
+    public String getName() {
+        return name;
     }
 
-    public void setEmployeeName(String employeeName) {
-        this.employeeName = employeeName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getEmployeeEmail() {
-        return employeeEmail;
+    public String getEmail() {
+        return email;
     }
 
-    public void setEmployeeEmail(String employeeEmail) {
-        this.employeeEmail = employeeEmail;
+    public void setEmail(String email) {
+        this.email = email;
     }
     public List<Task> getTask() {
         return tasks;
@@ -42,12 +43,15 @@ public class Employee{
     public void addProjectAsManager(Project project){
         this.projectsAsManager.add(project);
     }
+    public void addEffort(Effort effort) {
+        this.efforts.add(effort);
+    }
     public String toString() {
         return  "Employee: "
-                + employeeName
+                + name
                 + '\n'
                 + "Email: "
-                + employeeEmail
+                + email
                 + '\n';
     }
 }

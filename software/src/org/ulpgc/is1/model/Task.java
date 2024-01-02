@@ -2,69 +2,73 @@ package org.ulpgc.is1.model;
 
 import java.time.LocalDate;
 import java.util.Date;
+import java.util.List;
 
 public class Task extends Effort{
 
-    private String taskName;
-    private String taskDescription;
-    private LocalDate taskStart;
-    private LocalDate taskEnd;
-    private Effort effort;
+    private String name;
+    private String description;
+    private LocalDate start;
+    private LocalDate end;
     private TaskType taskType;
+    private List<Effort> efforts;
 
-    public Task(String taskName, String taskDescription, TaskType taskType,LocalDate taskStart, LocalDate taskEnd, int amount) {
-        super(amount);
-        this.taskName = taskName;
-        this.taskDescription = taskDescription;
-        this.taskStart = taskStart;
-        this.taskEnd = taskEnd;
+    public Task(String name, String description, LocalDate start, LocalDate end, TaskType taskType, int amount , Employee employee) {
+        super(amount, employee);
+        this.name = name;
+        this.description = description;
+        this.start = start;
+        this.end = end;
+        this.taskType = taskType;
     }
 
-    public String getTaskName() {
-        return taskName;
+    public String getName() {
+        return name;
     }
 
-    public void setTaskName(String taskName) {
-        this.taskName = taskName;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public String getTaskDescription() {
-        return taskDescription;
+    public String getDescription() {
+        return description;
     }
 
-    public void setTaskDescription(String taskDescription) {
-        this.taskDescription = taskDescription;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public LocalDate getTaskStart() {
-        return taskStart;
+    public LocalDate getStart() {
+        return start;
     }
 
-    public void setTaskStart(LocalDate taskStart) {
-        this.taskStart = taskStart;
+    public void setStart(LocalDate start) {
+        this.start = start;
     }
 
-    public LocalDate getTaskEnd() {
-        return taskEnd;
+    public LocalDate getEnd() {
+        return end;
     }
 
-    public void setTaskEnd(LocalDate taskEnd) {
-        this.taskEnd = taskEnd;
+    public void setEnd(LocalDate end) {
+        this.end = end;
     }
 
-    public TaskType getTaskType() { return taskType; }
+    public TaskType getTaskType() {
+        return taskType; }
 
-    public void addEffort(Effort newEffort) {
-        if(newEffort.getAmount()<=10 && newEffort.getAmount()>=0){
-            setAmount(newEffort.getAmount());
+    public void addEffort(Effort effort) {
+        if(effort.getAmount() >= 0 && effort.getAmount() <= 10){
+            efforts.add(effort);
+            effort.getEmployee().addEffort(effort);
         }else {
             System.out.println("El esfuerzo debe estar entre 0 y 10");
         }
     }
     public String toString() {
-        return  "Task: " + taskName + '\n'
-                + "Description: " + taskDescription + '\n'
-                + "Start: " + taskStart + '\n'
-                + "End: " + taskEnd + '\n';
+        return  "Task: " + name + '\n'
+                + "Description: " + description + '\n'
+                + "Start: " + start + '\n'
+                + "End: " + end + '\n';
     }
 }

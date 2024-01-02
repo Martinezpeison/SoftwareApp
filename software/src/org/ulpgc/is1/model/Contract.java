@@ -3,30 +3,30 @@ package org.ulpgc.is1.model;
 import java.time.LocalDate;
 
 public class Contract {
-    private LocalDate startContract;
-    private LocalDate endContract;
+    private LocalDate start;
+    private LocalDate end;
     private int budget;
 
-    public Contract(LocalDate startContract, LocalDate endContract, int budget) {
-        this.startContract = startContract;
-        this.endContract = endContract;
+    public Contract(LocalDate start, LocalDate end, int budget) {
+        this.start = start;
+        this.end = end;
         this.budget = budget;
     }
 
     public LocalDate getStartContract() {
-        return startContract;
+        return start;
     }
 
-    public void setStartContract(LocalDate startContract) {
-        this.startContract = startContract;
+    public void setStartContract(LocalDate start) {
+        this.start = start;
     }
 
     public LocalDate getEndContract() {
-        return endContract;
+        return end;
     }
 
-    public void setEndContract(LocalDate endContract) {
-        this.endContract = endContract;
+    public void setEndContract(LocalDate end) {
+        this.end = end;
     }
 
     public int getBudget() {
