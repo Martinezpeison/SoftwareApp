@@ -33,4 +33,14 @@ public class Customer extends Phone{
     public void addProjectAsCustomer(Project project){
         this.projectsAsCustomer.add(project);
     }
+    public List<Project> getProjectsAsCustomer() {
+        return projectsAsCustomer;
+    }
+    public String toString() {
+        return  name
+                + " "
+                + surname
+                + ", "
+                + isValid(phoneNumber);
+    }
 }

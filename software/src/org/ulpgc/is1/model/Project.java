@@ -9,24 +9,16 @@ public class Project extends Contract{
     private int projectId;
     private String projectName;
     private String projectDescription;
-    private static List<Task> tasks;
-    private Contract contract;
-    private Employee manager;
-    private Employee developers;
+    private static List<Task> tasks = new ArrayList<>();
     private ProjectType projectType;
-    private Customer customer;
 
 
-    public Project(String projectName, String projectDescription, ProjectType projectType, Customer customer, Employee manager, Employee developers, LocalDate startContract, LocalDate endContract, int budget) {
-        super(startContract, endContract, budget);
+    public Project(String projectName, String projectDescription, ProjectType projectType, LocalDate start, LocalDate end, int budget) {
+        super(start, end, budget);
         this.projectId = NEXT_ID++;
         this.projectName = projectName;
         this.projectDescription = projectDescription;
         this.projectType = projectType;
-        this.customer = customer;
-        this.manager = manager;
-        this.developers = developers;
-        this.tasks = new ArrayList<>();
     }
 
     public int getNEXT_ID() {
@@ -59,21 +51,15 @@ public class Project extends Contract{
     public List<Task> getTasks() {
         return tasks;
     }
-    public void setTasks(List<Task> tasks) {
-        this.tasks = tasks;
-    }
 
-    public static void addTask(Task newTask) {
-        tasks.add(newTask);
+    public void addTask(String name, String description, LocalDate start, LocalDate end, TaskType taskType) {
+        this.tasks.add(new Task(name, description, start, end, taskType));
     }
 
     public String toString() {
         return  "Project: " + projectName + '\n'
                 + "Description: " + projectDescription + '\n'
                 + "Project Type: " + projectType + '\n'
-                + "Customer " + customer + '\n'
-                + "Manager: " + manager + '\n'
-                + "Developers: " + developers + '\n'
                 + "Start Contract: " + getStartContract() + '\n'
                 + "End Contract: " + getEndContract()+ '\n'
                 + "Budget: " + getBudget() + '\n';

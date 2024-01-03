@@ -4,7 +4,7 @@ import java.time.LocalDate;
 import java.util.Date;
 import java.util.List;
 
-public class Task extends Effort{
+public class Task{
 
     private String name;
     private String description;
@@ -13,8 +13,7 @@ public class Task extends Effort{
     private TaskType taskType;
     private List<Effort> efforts;
 
-    public Task(String name, String description, LocalDate start, LocalDate end, TaskType taskType, int amount , Employee employee) {
-        super(amount, employee);
+    public Task(String name, String description, LocalDate start, LocalDate end, TaskType taskType) {
         this.name = name;
         this.description = description;
         this.start = start;
@@ -55,16 +54,13 @@ public class Task extends Effort{
     }
 
     public TaskType getTaskType() {
-        return taskType; }
+        return taskType;
+    }
 
     public void addEffort(Effort effort) {
-        if(effort.getAmount() >= 0 && effort.getAmount() <= 10){
-            efforts.add(effort);
-            effort.getEmployee().addEffort(effort);
-        }else {
-            System.out.println("El esfuerzo debe estar entre 0 y 10");
-        }
+        this.efforts.add(effort);
     }
+
     public String toString() {
         return  "Task: " + name + '\n'
                 + "Description: " + description + '\n'
