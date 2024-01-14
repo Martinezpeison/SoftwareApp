@@ -15,27 +15,23 @@ public class Employee{
         this.name = name;
         this.email = email;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getEmail() {
         return email;
     }
-
     public void setEmail(String email) {
         this.email = email;
     }
     public List<Task> getTask() {
         return tasks;
     }
-    public void addTask(Task newTask) {
-        tasks.add(newTask);
+    public void addTask(Task task) {
+        tasks.add(task);
     }
     public void addProjectAsDeveloper(Project project){
         this.projectsAsDeveloper.add(project);
@@ -43,7 +39,6 @@ public class Employee{
     public void addProjectAsManager(Project project){
         this.projectsAsManager.add(project);
     }
-
     public List<Project> getProjectsAsDeveloper() {
         return projectsAsDeveloper;
     }
@@ -51,7 +46,9 @@ public class Employee{
         return projectsAsManager;
     }
     public void addEffort(Effort effort) {
-        this.efforts.add(effort);
+        if (effort != null) {
+            this.efforts.add(effort);
+        }
     }
     public String toString() {
         return   name

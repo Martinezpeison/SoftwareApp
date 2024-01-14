@@ -5,11 +5,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Project extends Contract{
-    private int NEXT_ID = 0;
+    private static int NEXT_ID = 0;
     private int projectId;
     private String projectName;
     private String projectDescription;
-    private static List<Task> tasks = new ArrayList<>();
+    private List<Task> tasks = new ArrayList<>();
     private ProjectType projectType;
 
 

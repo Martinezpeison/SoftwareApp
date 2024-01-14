@@ -7,12 +7,12 @@ import static org.ulpgc.is1.model.ProjectType.webDevelopment;
 
 public class ProjectManager {
     public List<Customer> customers = new ArrayList<>();
-    public Project project;
+    public List<Project> projects = new ArrayList<>();
     private List<Employee> employees = new ArrayList<>();
 
     public ProjectManager() {
         this.customers = customers;
-        this.project = project;
+        this.projects = projects;
         this.employees = employees;
     }
 
@@ -29,7 +29,10 @@ public class ProjectManager {
     public Employee getEmployee(int index) {
         return employees.get(index);
     }
-    public void project(String projectName, String projectDescription, ProjectType projectType, LocalDate start, LocalDate end, int budget) {
-        this.project = new Project(projectName, projectDescription, projectType, start, end, budget);
+    public void addProject(String projectName, String projectDescription, ProjectType projectType, LocalDate start, LocalDate end, int budget) {
+        this.projects.add(new Project(projectName, projectDescription, projectType, start, end, budget));
+    }
+    public Project getProject(int index) {
+        return projects.get(index);
     }
 }

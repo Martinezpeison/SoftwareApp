@@ -19,28 +19,28 @@ public class Main {
         System.out.println("Datos del primer cliente: " + "\n" + projectManager.getCustomer(0) + "\n");
         System.out.println("Datos del segundo empleado: " + "\n" +projectManager.getEmployee(1) + "\n");
         System.out.println("Datos del proyecto del primer cliente: " + "\n" + projectManager.getCustomer(0).getProjectsAsCustomer());
-        System.out.println("Tareas del proyecto: " + "\n" + projectManager.project.getTasks() + "\n");
+        System.out.println("Tareas del proyecto: " + "\n" + projectManager.getProject(0).getTasks() + "\n");
         projectManager.customers.remove(1);
         System.out.println("Número de clientes: " + "\n" + projectManager.customers.size() + "\n");
     }
 
     private static void init() {
-        // Crear y añadir clientes
+
         projectManager.addCustomer("John", "Doe", "123456789");
         projectManager.addCustomer("Mary", "Smith", "987654321");
 
-
-        // Crear y añadir empleados
         projectManager.addEmployee("Juan", "juan@gmail.com");
         projectManager.addEmployee("Pedro", "pedro@gmail.com");
 
-        projectManager.project("Super mario", "Crear videojuego de Super Mario", mobileAppDevelopment, LocalDate.of(2019, 1, 1), LocalDate.of(2023, 2, 24), 1000);
+        projectManager.addProject("Super mario", "Crear videojuego de Super Mario", mobileAppDevelopment, LocalDate.of(2019, 1, 1), LocalDate.of(2023, 2, 24), 1000);
 
-        projectManager.getCustomer(0).addProjectAsCustomer(projectManager.project);
-        projectManager.getEmployee(0).addProjectAsDeveloper(projectManager.project);
-        projectManager.getEmployee(1).addProjectAsManager(projectManager.project);
-        projectManager.project.addTask("Menú", "Crear el menú de Super Mario", LocalDate.of(2019, 1, 1), LocalDate.of(2020, 4, 5), Design);
-        projectManager.project.addTask("Personajes", "Crear los personajes de Super Mario", LocalDate.of(2020, 4, 6), LocalDate.of(2021, 7, 10), Programming);
+        projectManager.getCustomer(0).addProjectAsCustomer(projectManager.getProject(0));
+        projectManager.getEmployee(0).addProjectAsDeveloper(projectManager.getProject(0));
+        projectManager.getEmployee(1).addProjectAsManager(projectManager.getProject(0));
+        projectManager.getProject(0).addTask("Menú", "Crear el menú de Super Mario", LocalDate.of(2019, 1, 1), LocalDate.of(2020, 4, 5), Design);
+        projectManager.getProject(0).addTask("Personajes", "Crear los personajes de Super Mario", LocalDate.of(2020, 4, 6), LocalDate.of(2021, 7, 10), Programming);
+
+
     }
 }
 
