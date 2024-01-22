@@ -50,6 +50,9 @@ public class Employee{
             this.efforts.add(effort);
         }
     }
+    public List<Effort> getEfforts() {
+        return efforts;
+    }
     public String toString() {
         return   name
                 + ", "

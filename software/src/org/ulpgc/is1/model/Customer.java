@@ -3,15 +3,18 @@ package org.ulpgc.is1.model;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Customer extends Phone{
+public class Customer{
     private String name;
     private String surname;
     private List<Project> projectsAsCustomer = new ArrayList<>();
+    private Phone number;
+
 
     public Customer(String name, String surname, String phoneNumber) {
         this.name = name;
         this.surname = surname;
-        this.phoneNumber = phoneNumber;
+        this.number = new Phone();
+        this.setNumber(phoneNumber);
     }
 
     public String getName() {
@@ -29,7 +32,12 @@ public class Customer extends Phone{
     public void setSurname(String surname) {
         this.surname = surname;
     }
-
+    public Phone getNumber() {
+        return number;
+    }
+    public void setNumber(String phoneNumber) {
+        this.number.setNumber(phoneNumber);
+    }
     public void addProjectAsCustomer(Project project){
         this.projectsAsCustomer.add(project);
     }
@@ -41,6 +49,6 @@ public class Customer extends Phone{
                 + " "
                 + surname
                 + ", "
-                + isValid(phoneNumber);
+                + number.isValid(number.getNumber());
     }
 }

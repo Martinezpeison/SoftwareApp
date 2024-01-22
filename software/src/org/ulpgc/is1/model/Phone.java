@@ -1,13 +1,18 @@
 package org.ulpgc.is1.model;
 
 public class Phone {
-    String phoneNumber;
-
-    public String isValid(String phoneNumber) {
-        if (phoneNumber.length() != 9 || !phoneNumber.matches("[0-9]+")) {
+    String number;
+    public void setNumber(String number) {
+        this.number = number;
+    }
+    public String getNumber() {
+        return this.number;
+    }
+    public String isValid(String number) {
+        if (number.length() != 9 || !number.matches("[0-9]+")) {
             return "XXXX";
         } else {
-            return phoneNumber;
+            return number.toString();
         }
     }
 }

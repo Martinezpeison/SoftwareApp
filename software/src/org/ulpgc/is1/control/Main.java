@@ -26,13 +26,18 @@ public class Main {
 
     private static void init() {
 
-        projectManager.addCustomer("John", "Doe", "123456789");
+        projectManager.addCustomer("John", "Doe", "123456789n");
         projectManager.addCustomer("Mary", "Smith", "987654321");
 
         projectManager.addEmployee("Juan", "juan@gmail.com");
         projectManager.addEmployee("Pedro", "pedro@gmail.com");
 
-        projectManager.addProject("Super mario", "Crear videojuego de Super Mario", mobileAppDevelopment, LocalDate.of(2019, 1, 1), LocalDate.of(2023, 2, 24), 1000);
+        projectManager.project("Super mario", "Crear videojuego de Super Mario", mobileAppDevelopment);
+        projectManager.project.setContract(new Contract(LocalDate.of(2019, 1, 1), LocalDate.of(2021, 7, 10), 10000));
+        projectManager.project.setCustomer(projectManager.getCustomer(0));
+        projectManager.project.setManager(projectManager.getEmployee(1));
+        projectManager.project.addDeveloper(projectManager.getEmployee(0));
+
 
         projectManager.getCustomer(0).addProjectAsCustomer(projectManager.getProject(0));
         projectManager.getEmployee(0).addProjectAsDeveloper(projectManager.getProject(0));

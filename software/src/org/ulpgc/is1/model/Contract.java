@@ -13,19 +13,19 @@ public class Contract {
         this.budget = budget;
     }
 
-    public LocalDate getStartContract() {
+    public LocalDate getStart() {
         return start;
     }
 
-    public void setStartContract(LocalDate start) {
+    public void setStart(LocalDate start) {
         this.start = start;
     }
 
-    public LocalDate getEndContract() {
+    public LocalDate getEnd() {
         return end;
     }
 
-    public void setEndContract(LocalDate end) {
+    public void setEndy(LocalDate end) {
         this.end = end;
     }
 
