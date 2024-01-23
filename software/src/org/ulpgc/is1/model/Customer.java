@@ -7,14 +7,14 @@ public class Customer{
     private String name;
     private String surname;
     private List<Project> projectsAsCustomer = new ArrayList<>();
-    private Phone number;
+    private Phone phone;
 
 
     public Customer(String name, String surname, String phoneNumber) {
         this.name = name;
         this.surname = surname;
-        this.number = new Phone();
-        this.setNumber(phoneNumber);
+        this.phone = new Phone();
+        this.setPhone(phoneNumber);
     }
 
     public String getName() {
@@ -32,11 +32,11 @@ public class Customer{
     public void setSurname(String surname) {
         this.surname = surname;
     }
-    public Phone getNumber() {
-        return number;
+    public Phone getPhone() {
+        return phone;
     }
-    public void setNumber(String phoneNumber) {
-        this.number.setNumber(phoneNumber);
+    public void setPhone(String phoneNumber) {
+        this.phone.setNumber(phoneNumber);
     }
     public void addProjectAsCustomer(Project project){
         this.projectsAsCustomer.add(project);
@@ -49,6 +49,6 @@ public class Customer{
                 + " "
                 + surname
                 + ", "
-                + number.isValid(number.getNumber());
+                + phone.isValid(phone.getNumber());
     }
 }

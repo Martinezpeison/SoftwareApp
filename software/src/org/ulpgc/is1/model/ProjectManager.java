@@ -22,7 +22,6 @@ public class ProjectManager {
     public void addEmployee(String name, String email) {
         this.employees.add(new Employee(name, email));
     }
-
     public Customer getCustomer(int index) {
         return customers.get(index);
     }

@@ -27,41 +27,33 @@ public class Project{
     public int getNEXT_ID() {
         return NEXT_ID;
     }
-
     public int getId() {
         return id;
     }
-
     public void setId(int id) {
         this.id = id;
     }
-
     public String getName() {
         return name;
     }
-
     public void setName(String name) {
         this.name = name;
     }
-
     public String getDescription() {
         return description;
     }
-
     public void setDescription(String description) {
         this.description = description;
     }
     public Contract getContract() {
         return contract;
     }
-
     public void setContract(Contract contract) {
         this.contract = contract;
     }
     public List<Task> getTasks() {
         return tasks;
     }
-
     public void addTask(String name, String description, LocalDate start, LocalDate end, TaskType taskType) {
         this.tasks.add(new Task(name, description, start, end, taskType));
     }
@@ -81,7 +73,6 @@ public class Project{
     public void addDeveloper(Employee developer) {
         this.developers.add(developer);
     }
-
     public String toString() {
         return  "Project: " + name + '\n'
                 + "Description: " + description + '\n'
